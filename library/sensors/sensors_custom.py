@@ -23,6 +23,10 @@ import math
 import platform
 from abc import ABC, abstractmethod
 from typing import List
+import json
+from library.log import logger
+import requests
+import library.config as config
 
 
 # Custom data classes must be implemented in this file, inherit the CustomDataSource and implement its 2 methods
@@ -95,4 +99,102 @@ class ExampleCustomTextOnlyData(CustomDataSource):
 
     def last_values(self) -> List[float]:
         # If a custom data class only has text values, it won't be possible to display line graph
+        pass
+
+
+class SpeedtestDownloadData(CustomDataSource):
+    def as_numeric(self) -> float:
+        self.value = math.nan
+
+        try:
+            with open('/home/tom/speedtest.log') as json_file:
+                speedtest_results = json.loads(json_file.read())
+                if speedtest_results:
+                    self.value = int(speedtest_results["download"]["bytes"]) / 1250000
+        except IOError as e:
+            logger.error('Error with speedtest : ' + e)
+
+        return self.value
+
+    def as_string(self) -> str:
+       return f'{self.value:.1f}MBps'
+
+    def last_values(self) -> List[float]:
+        pass
+
+class SpeedtestUploadData(CustomDataSource):
+    def as_numeric(self) -> float:
+        self.value = math.nan
+
+        try:
+            with open('/home/tom/speedtest.log') as json_file:
+                speedtest_results = json.loads(json_file.read())
+                if speedtest_results:
+                    self.value = int(speedtest_results["upload"]["bytes"]) / 1250000
+        except IOError as e:
+            logger.error('Error with speedtest : ' + e)
+
+        return self.value
+
+    def as_string(self) -> str:
+       return f'{self.value:.1f}MBps'
+
+    def last_values(self) -> List[int]:
+        pass
+
+class SpeedtestPingData(CustomDataSource):
+    def as_numeric(self) -> float:
+        self.value = math.nan
+
+        try:
+            with open('/home/tom/speedtest.log') as json_file:
+                speedtest_results = json.loads(json_file.read())
+                if speedtest_results:
+                    self.value = float(speedtest_results["ping"]["latency"])
+        except IOError as e:
+            logger.error('Error with speedtest : ' + e)
+
+        return self.value
+
+    def as_string(self) -> str:
+       return f'{self.value:.1f}ms'
+
+    def last_values(self) -> List[int]:
+        pass
+
+class VPNStatusData(CustomDataSource):
+
+    @staticmethod
+    def is_vpn_active():
+        try:
+            proxy_url = config.CONFIG_DATA["config"]["PROXY"]
+            logger.info(f'URL proxy: {proxy_url}')
+
+            # IP sans proxy
+            response = requests.get('https://httpbin.org/ip', timeout=5)
+            if response:
+                my_ip = json.loads(response.text)["origin"]
+                logger.info(f'IP: {my_ip}')
+
+            # IP avec proxy
+            proxies = { "http": proxy_url, "https": proxy_url }
+            response = requests.get('https://httpbin.org/ip', proxies=proxies, timeout=5)
+            if response:
+                my_vpn_ip = json.loads(response.text)["origin"]
+                logger.info(f'IP_VPN: {my_vpn_ip}')
+
+
+            return my_ip and my_vpn_ip and my_ip != my_vpn_ip
+        except Exception as error:
+            logger.error(error)
+            return False
+            
+    def as_numeric(self) -> bool:
+        self.value = self.is_vpn_active()
+        return self.value 
+
+    def as_string(self) -> str:
+       return 'OK' if self.value else 'KO'
+
+    def last_values(self) -> List[bool]:
         pass

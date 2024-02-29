@@ -648,7 +648,7 @@ class Net:
     def _show_themed_tax_rate(theme_data, rate):
         display_themed_value(
             theme_data=theme_data,
-            value=f"{bytes2human(rate, '%(value).1f %(symbol)s/s')}",
+            value=f"{bytes2human(rate, '%(value).1f %(symbol)s/s'):<20}",
             min_size=10
         )
 

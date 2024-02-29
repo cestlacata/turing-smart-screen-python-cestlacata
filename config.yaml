@@ -1,15 +1,14 @@
----
 config:
   # Configuration values to set up basic communication
   # Set your COM port e.g. COM3 for Windows, /dev/ttyACM0 for Linux...
   # Use AUTO for COM port auto-discovery (may not work on every setup)
   # COM_PORT: "/dev/ttyACM0"
   # COM_PORT: "COM3"
-  COM_PORT: "AUTO"
+  COM_PORT: AUTO
 
   # Theme to use (located in res/themes)
   # Use the name of the folder as value
-  THEME: 3.5inchTheme2
+  THEME: Nuc
 
   # Hardware sensors reading
   # Choose the appropriate method for reading your hardware sensors:
@@ -23,8 +22,10 @@ config:
   # Linux/MacOS interfaces are named "eth0", "wlan0", "wlp1s0", "enp2s0"...
   # For Windows use the interfaces pretty name: "Ethernet 2", "Wi-Fi", ...
   # Leave the fields empty if the card does not exist on your setup
-  ETH: "" # Ethernet Card
-  WLO: "" # Wi-Fi Card
+  ETH: '' #eth0 # Ethernet Card
+  WLO: wlp2s0 # Wi-Fi Card
+
+  PROXY: socks5://localhost:1080
 
 display:
   # Display revision:
@@ -35,7 +36,7 @@ display:
   # - SIMU   for 3.5" simulated LCD (image written in screencap.png)
   # - SIMU5  for 5" simulated LCD
   # To identify your smart screen: https://github.com/mathoudebine/turing-smart-screen-python/wiki/Hardware-revisions
-  REVISION: A
+  REVISION: SIMU
 
   # Display Brightness
   # Set this as the desired %, 0 being completely dark and 100 being max brightness
