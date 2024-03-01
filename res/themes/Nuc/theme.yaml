@@ -15,86 +15,42 @@ static_images:
     HEIGHT: 320
 
 static_text:
-  CPU_LABEL:
-    TEXT: "CPU"
-    X: 52
-    Y: 90
-    FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 20
-    FONT_COLOR: 50, 200, 100
-    BACKGROUND_COLOR: 0, 0, 0
-
-  MEM_LABEL:
-    TEXT: "MEM"
-    X: 232
-    Y: 90
-    FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 20
-    FONT_COLOR: 200, 100, 50
-    BACKGROUND_COLOR: 0, 0, 0
-
-  DISK_LABEL:
-    TEXT: "DISK"
-    X: 340
-    Y: 90
-    FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 20
-    FONT_COLOR: 100, 50, 200
-    BACKGROUND_COLOR: 0, 0, 0
-
   DOWNLOAD_LABEL:
     TEXT: "DOWN"
-    X: 40
+    X: 20
     Y: 160
     FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 18
+    FONT_SIZE: 30
     FONT_COLOR: 190, 70, 90
     BACKGROUND_COLOR: 0, 0, 0
 
   UPLOAD_LABEL:
     TEXT: "UPLD"
-    X: 40
-    Y: 180
+    X: 20
+    Y: 200
     FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 18
+    FONT_SIZE: 30
     FONT_COLOR: 190, 70, 90
     BACKGROUND_COLOR: 0, 0, 0
 
   PING_LABEL:
     TEXT: "PING"
-    X: 40
-    Y: 200
+    X: 20
+    Y: 240
     FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 18
+    FONT_SIZE: 30
     FONT_COLOR: 190, 70, 90
     BACKGROUND_COLOR: 0, 0, 0
 
   VPN_LABEL:
     TEXT: "VPN"
-    X: 40
-    Y: 220
+    X: 20
+    Y: 280
     FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 18
+    FONT_SIZE: 30
     FONT_COLOR: 190, 70, 90
     BACKGROUND_COLOR: 0, 0, 0
 
-  DOWNLOAD_LIVE_LABEL:
-    TEXT: "DL"
-    X: 260
-    Y: 160
-    FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 18
-    FONT_COLOR: 60, 110, 210
-    BACKGROUND_COLOR: 0, 0, 0
-
-  UPLOAD_LIVE_LABEL:
-    TEXT: "UP"
-    X: 260
-    Y: 180
-    FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 18
-    FONT_COLOR: 60, 110, 210
-    BACKGROUND_COLOR: 0, 0, 0
 
 STATS:
   INTERVAL: 1
@@ -102,9 +58,9 @@ STATS:
   DATE:
     DAY:
       TEXT:
-        SHOW: True
-        FORMAT: dd/MM/YYYY
-        X: 260
+        SHOW: False
+        FORMAT: dd/MM/YY
+        X: 280
         Y: 290
         FONT: roboto-mono/RobotoMono-Bold.ttf
         FONT_SIZE: 17
@@ -112,7 +68,7 @@ STATS:
         BACKGROUND_COLOR: 0, 0, 0
     HOUR:
       TEXT:
-        SHOW: True
+        SHOW: False
         FORMAT: HH:mm:ss
         X: 380
         Y: 290
@@ -122,13 +78,27 @@ STATS:
         BACKGROUND_COLOR: 0, 0, 0
 
   CPU:
+    TEMPERATURE:
+      TEXT:
+        SHOW: True
+        SHOW_UNIT: True
+        X: 130
+        Y: 90
+        FONT_SIZE: 28
+        FONT: roboto/Roboto-Bold.ttf
+        FONT_COLOR: 100, 250, 150
+        BACKGROUND_IMAGE: background.png
+        BACKGROUND_COLOR: 0, 0, 0
+    
     PERCENTAGE:
       RADIAL:
+        X: 80
+        Y: 60
+        BAR_COLOR: 50, 200, 100
+        FONT_COLOR: 100, 250, 150
         SHOW: True
-        X: 70
-        Y: 50
-        RADIUS: 31
-        WIDTH: 13
+        RADIUS: 55
+        WIDTH: 25
         MIN_VALUE: 0
         MAX_VALUE: 100
         ANGLE_START: 0
@@ -136,73 +106,42 @@ STATS:
         ANGLE_STEPS: 1
         ANGLE_SEP: 25
         CLOCKWISE: True
-        BAR_COLOR: 50, 200, 100
         SHOW_TEXT: True
         SHOW_UNIT: True
+        FONT_SIZE: 25
         FONT: roboto/Roboto-Bold.ttf
-        FONT_SIZE: 13
-        FONT_COLOR: 100, 250, 150
 
     FREQUENCY:
       TEXT:
         SHOW: True
         SHOW_UNIT: True
-        X: 50
-        Y: 112
+        X: 40
+        Y: 120
         FONT: roboto/Roboto-Bold.ttf
-        FONT_SIZE: 14
+        FONT_SIZE: 25
         FONT_COLOR: 50, 200, 100
         BACKGROUND_COLOR: 0, 0, 0
 
-    TEMPERATURE:
-      TEXT:
-        SHOW: True
-        SHOW_UNIT: True
-        X: 120
-        Y: 40
-        FONT: roboto/Roboto-Bold.ttf
-        FONT_SIZE: 26
-        FONT_COLOR: 100, 250, 150
-        BACKGROUND_COLOR: 0, 0, 0
-      RADIAL:
-        SHOW: False
-        X: 120
-        Y: 120
-        RADIUS: 31
-        WIDTH: 13
-        MIN_VALUE: 0
-        MAX_VALUE: 100
-        ANGLE_START: 0
-        ANGLE_END: 0
-        ANGLE_STEPS: 1
-        ANGLE_SEP: 25
-        CLOCKWISE: True
-        BAR_COLOR: 50, 200, 100
-        SHOW_TEXT: True
-        SHOW_UNIT: True
-        FONT: roboto/Roboto-Bold.ttf
-        FONT_SIZE: 13
-        FONT_COLOR: 100, 250, 150
   NET:
     ETH:
       DOWNLOAD:
         TEXT:
           SHOW: True
           SHOW_UNIT: True
-          X: 290
-          Y: 160
-          FONT: roboto/Roboto-Bold.ttf
-          FONT_SIZE: 18
+          X: 230
+          Y: 170
           FONT_COLOR: 100, 150, 250
+          FONT_SIZE: 40
+          FONT: roboto/Roboto-Bold.ttf
           BACKGROUND_IMAGE: background.png
       UPLOAD:
         TEXT:
           SHOW: True
           SHOW_UNIT: True
-          X: 290
-          Y: 180
+          X: 230
+          Y: 220
           FONT: roboto/Roboto-Bold.ttf
-          FONT_SIZE: 18
+          FONT_SIZE: 40
           FONT_COLOR: 100, 150, 250
           BACKGROUND_IMAGE: background.png
 
@@ -210,11 +149,13 @@ STATS:
   MEMORY:
    VIRTUAL:
     RADIAL:
+      X: 270
+      Y: 60
+      BAR_COLOR: 200, 100, 50
+      FONT_COLOR: 250, 150, 100
       SHOW: True
-      X: 250
-      Y: 50
-      RADIUS: 31
-      WIDTH: 13
+      RADIUS: 55
+      WIDTH: 25
       MIN_VALUE: 0
       MAX_VALUE: 100
       ANGLE_START: 0
@@ -222,19 +163,17 @@ STATS:
       ANGLE_STEPS: 1
       ANGLE_SEP: 25
       CLOCKWISE: True
-      BAR_COLOR: 200, 100, 50
       SHOW_TEXT: True
       SHOW_UNIT: True
+      FONT_SIZE: 25
       FONT: roboto/Roboto-Bold.ttf
-      FONT_SIZE: 13
-      FONT_COLOR: 250, 150, 100
     USED:
       SHOW: TRUE
       SHOW_UNIT: True
       X: 230
-      Y: 112
+      Y: 120
       FONT: roboto/Roboto-Bold.ttf
-      FONT_SIZE: 14
+      FONT_SIZE: 25
       FONT_COLOR: 250, 150, 100
       BACKGROUND_COLOR: 0, 0, 0
         
@@ -244,29 +183,31 @@ STATS:
       TEXT:
         SHOW: True
         SHOW_UNIT: True
-        X: 340
-        Y: 112
+        X: 370
+        Y: 120
         FONT: roboto/Roboto-Bold.ttf
-        FONT_SIZE: 14
+        FONT_SIZE: 25
         FONT_COLOR: 150, 100, 250
         BACKGROUND_IMAGE: background.png
       RADIAL:
-       SHOW: True
-       X: 360
-       Y: 50
-       RADIUS: 31
-       WIDTH: 13
-       ANGLE_START: 0
-       ANGLE_END: 0
-       ANGLE_STEPS: 1
-       ANGLE_SEP: 25
-       CLOCKWISE: True
-       BAR_COLOR: 100, 50, 200
-       SHOW_TEXT: True
-       SHOW_UNIT: True
-       FONT: roboto/Roboto-Bold.ttf
-       FONT_SIZE: 13
-       FONT_COLOR: 150, 100, 250
+        X: 410
+        Y: 60
+        BAR_COLOR: 100, 50, 200
+        FONT_COLOR: 150, 100, 250
+        SHOW: True
+        RADIUS: 55
+        WIDTH: 25
+        MIN_VALUE: 0
+        MAX_VALUE: 100
+        ANGLE_START: 0
+        ANGLE_END: 0
+        ANGLE_STEPS: 1
+        ANGLE_SEP: 25
+        CLOCKWISE: True
+        SHOW_TEXT: True
+        SHOW_UNIT: True
+        FONT_SIZE: 25
+        FONT: roboto/Roboto-Bold.ttf
 
 
   # All custom sensor classes are listed under CUSTOM
@@ -280,7 +221,7 @@ STATS:
         X: 100
         Y: 160
         FONT: roboto-mono/RobotoMono-Bold.ttf
-        FONT_SIZE: 18
+        FONT_SIZE: 25
         FONT_COLOR: 250, 130, 150
         BACKGROUND_COLOR: 0, 0, 0
 
@@ -288,9 +229,9 @@ STATS:
       TEXT:
         SHOW: True
         X: 100
-        Y: 180
+        Y: 200
         FONT: roboto-mono/RobotoMono-Bold.ttf
-        FONT_SIZE: 18
+        FONT_SIZE: 25
         FONT_COLOR: 250, 130, 150
         BACKGROUND_COLOR: 0, 0, 0
 
@@ -298,9 +239,9 @@ STATS:
       TEXT:
         SHOW: True
         X: 100
-        Y: 200
+        Y: 240
         FONT: roboto-mono/RobotoMono-Bold.ttf
-        FONT_SIZE: 18
+        FONT_SIZE: 25
         FONT_COLOR: 250, 130, 150
         BACKGROUND_COLOR: 0, 0, 0
 
@@ -308,9 +249,9 @@ STATS:
       TEXT:
         SHOW: True
         X: 100
-        Y: 220
+        Y: 280
         FONT: roboto-mono/RobotoMono-Bold.ttf
-        FONT_SIZE: 18
+        FONT_SIZE: 25
         FONT_COLOR: 250, 130, 150
         BACKGROUND_COLOR: 0, 0, 0
 
