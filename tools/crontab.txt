@@ -1,0 +1,2 @@
+0 7 * * * /bin/systemctl start turing-smart-screen-python
+0 0 * * * /bin/systemctl stop turing-smart-screen-python

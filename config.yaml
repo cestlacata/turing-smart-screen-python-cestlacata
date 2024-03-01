@@ -22,8 +22,8 @@ config:
   # Linux/MacOS interfaces are named "eth0", "wlan0", "wlp1s0", "enp2s0"...
   # For Windows use the interfaces pretty name: "Ethernet 2", "Wi-Fi", ...
   # Leave the fields empty if the card does not exist on your setup
-  ETH: '' #eth0 # Ethernet Card
-  WLO: wlp2s0 # Wi-Fi Card
+  ETH: eno1 # Ethernet Card
+  WLO: '' # Wi-Fi Card
 
   PROXY: socks5://localhost:1080
 
@@ -36,7 +36,7 @@ display:
   # - SIMU   for 3.5" simulated LCD (image written in screencap.png)
   # - SIMU5  for 5" simulated LCD
   # To identify your smart screen: https://github.com/mathoudebine/turing-smart-screen-python/wiki/Hardware-revisions
-  REVISION: SIMU
+  REVISION: A
 
   # Display Brightness
   # Set this as the desired %, 0 being completely dark and 100 being max brightness

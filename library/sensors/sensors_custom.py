@@ -110,7 +110,7 @@ class SpeedtestDownloadData(CustomDataSource):
             with open('/home/tom/speedtest.log') as json_file:
                 speedtest_results = json.loads(json_file.read())
                 if speedtest_results:
-                    self.value = int(speedtest_results["download"]["bytes"]) / 1250000
+                    self.value = int(speedtest_results["download"]["bandwidth"]) / 125000
         except IOError as e:
             logger.error('Error with speedtest : ' + e)
 
@@ -130,7 +130,7 @@ class SpeedtestUploadData(CustomDataSource):
             with open('/home/tom/speedtest.log') as json_file:
                 speedtest_results = json.loads(json_file.read())
                 if speedtest_results:
-                    self.value = int(speedtest_results["upload"]["bytes"]) / 1250000
+                    self.value = int(speedtest_results["upload"]["bandwidth"]) / 125000
         except IOError as e:
             logger.error('Error with speedtest : ' + e)
 

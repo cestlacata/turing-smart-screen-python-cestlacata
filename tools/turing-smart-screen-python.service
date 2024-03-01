@@ -5,10 +5,10 @@ After=network-online.target
 
 [Service]
 Type=simple
-User=root
+User=tom
 
-WorkingDirectory=/opt/turing-smart-screen-python/
-ExecStart=python3 main.py
+WorkingDirectory=/home/tom/turing-smart-screen-python-cestlacata/
+ExecStart=/home/tom/turing-smart-screen-python-cestlacata/.venv/bin/python3 main.py
 
 ; Always restart the script
 Restart=always

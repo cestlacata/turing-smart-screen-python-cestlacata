@@ -369,15 +369,15 @@ class Memory(sensors.Memory):
 class Disk(sensors.Disk):
     @staticmethod
     def disk_usage_percent() -> float:
-        return psutil.disk_usage("/").percent
+        return psutil.disk_usage("/home").percent
 
     @staticmethod
     def disk_used() -> int:  # In bytes
-        return psutil.disk_usage("/").used
+        return psutil.disk_usage("/home").used
 
     @staticmethod
     def disk_free() -> int:  # In bytes
-        return psutil.disk_usage("/").free
+        return psutil.disk_usage("/home").free
 
 
 class Net(sensors.Net):

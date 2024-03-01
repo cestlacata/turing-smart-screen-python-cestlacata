@@ -103,8 +103,8 @@ STATS:
     DAY:
       TEXT:
         SHOW: True
-        FORMAT: short
-        X: 280
+        FORMAT: dd/MM/YYYY
+        X: 260
         Y: 290
         FONT: roboto-mono/RobotoMono-Bold.ttf
         FONT_SIZE: 17
@@ -113,8 +113,8 @@ STATS:
     HOUR:
       TEXT:
         SHOW: True
-        FORMAT: short
-        X: 395
+        FORMAT: HH:mm:ss
+        X: 380
         Y: 290
         FONT: roboto-mono/RobotoMono-Bold.ttf
         FONT_SIZE: 17
@@ -184,7 +184,7 @@ STATS:
         FONT_SIZE: 13
         FONT_COLOR: 100, 250, 150
   NET:
-    WLO:
+    ETH:
       DOWNLOAD:
         TEXT:
           SHOW: True
