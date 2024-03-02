@@ -14,66 +14,28 @@ static_images:
     WIDTH: 480
     HEIGHT: 320
 
-static_text:
-  DOWNLOAD_LABEL:
-    TEXT: "DOWN"
-    X: 20
-    Y: 160
-    FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 30
-    FONT_COLOR: 190, 70, 90
-    BACKGROUND_COLOR: 0, 0, 0
-
-  UPLOAD_LABEL:
-    TEXT: "UPLD"
-    X: 20
-    Y: 200
-    FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 30
-    FONT_COLOR: 190, 70, 90
-    BACKGROUND_COLOR: 0, 0, 0
-
-  PING_LABEL:
-    TEXT: "PING"
-    X: 20
-    Y: 240
-    FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 30
-    FONT_COLOR: 190, 70, 90
-    BACKGROUND_COLOR: 0, 0, 0
-
-  VPN_LABEL:
-    TEXT: "VPN"
-    X: 20
-    Y: 280
-    FONT: roboto-mono/RobotoMono-Bold.ttf
-    FONT_SIZE: 30
-    FONT_COLOR: 190, 70, 90
-    BACKGROUND_COLOR: 0, 0, 0
-
-
 STATS:
   INTERVAL: 1
   
   DATE:
     DAY:
       TEXT:
-        SHOW: False
+        SHOW: True
         FORMAT: dd/MM/YY
-        X: 280
-        Y: 290
+        X: 0
+        Y: 0
         FONT: roboto-mono/RobotoMono-Bold.ttf
-        FONT_SIZE: 17
+        FONT_SIZE: 10
         FONT_COLOR: 200, 200, 200
         BACKGROUND_COLOR: 0, 0, 0
     HOUR:
       TEXT:
-        SHOW: False
+        SHOW: True
         FORMAT: HH:mm:ss
-        X: 380
-        Y: 290
+        X: 55
+        Y: 0
         FONT: roboto-mono/RobotoMono-Bold.ttf
-        FONT_SIZE: 17
+        FONT_SIZE: 10
         FONT_COLOR: 200, 200, 200
         BACKGROUND_COLOR: 0, 0, 0
 
@@ -82,8 +44,8 @@ STATS:
       TEXT:
         SHOW: True
         SHOW_UNIT: True
-        X: 130
-        Y: 90
+        X: 40
+        Y: 120
         FONT_SIZE: 28
         FONT: roboto/Roboto-Bold.ttf
         FONT_COLOR: 100, 250, 150
@@ -113,7 +75,7 @@ STATS:
 
     FREQUENCY:
       TEXT:
-        SHOW: True
+        SHOW: False
         SHOW_UNIT: True
         X: 40
         Y: 120
@@ -128,21 +90,21 @@ STATS:
         TEXT:
           SHOW: True
           SHOW_UNIT: True
-          X: 230
-          Y: 170
-          FONT_COLOR: 100, 150, 250
-          FONT_SIZE: 40
+          X: 90
+          Y: 165
+          FONT_COLOR: 158, 251, 222
+          FONT_SIZE: 37
           FONT: roboto/Roboto-Bold.ttf
           BACKGROUND_IMAGE: background.png
       UPLOAD:
         TEXT:
           SHOW: True
           SHOW_UNIT: True
-          X: 230
-          Y: 220
+          X: 90
+          Y: 215
           FONT: roboto/Roboto-Bold.ttf
-          FONT_SIZE: 40
-          FONT_COLOR: 100, 150, 250
+          FONT_SIZE: 37
+          FONT_COLOR: 158, 251, 222
           BACKGROUND_IMAGE: background.png
 
 
@@ -213,46 +175,46 @@ STATS:
   # All custom sensor classes are listed under CUSTOM
   CUSTOM:
 
-    INTERVAL: 60
+    INTERVAL: 300
 
     SpeedtestDownloadData:
       TEXT:
         SHOW: True
-        X: 100
-        Y: 160
+        X: 340
+        Y: 170
         FONT: roboto-mono/RobotoMono-Bold.ttf
         FONT_SIZE: 25
-        FONT_COLOR: 250, 130, 150
+        FONT_COLOR: 278, 169, 75
         BACKGROUND_COLOR: 0, 0, 0
 
     SpeedtestUploadData:
       TEXT:
         SHOW: True
-        X: 100
-        Y: 200
+        X: 340
+        Y: 220
         FONT: roboto-mono/RobotoMono-Bold.ttf
         FONT_SIZE: 25
-        FONT_COLOR: 250, 130, 150
+        FONT_COLOR: 278, 169, 75
         BACKGROUND_COLOR: 0, 0, 0
 
     SpeedtestPingData:
       TEXT:
         SHOW: True
-        X: 100
-        Y: 240
+        X: 340
+        Y: 280
         FONT: roboto-mono/RobotoMono-Bold.ttf
         FONT_SIZE: 25
-        FONT_COLOR: 250, 130, 150
+        FONT_COLOR: 150, 219, 279
         BACKGROUND_COLOR: 0, 0, 0
 
     VPNStatusData:
       TEXT:
         SHOW: True
         X: 100
-        Y: 280
+        Y: 275
         FONT: roboto-mono/RobotoMono-Bold.ttf
-        FONT_SIZE: 25
-        FONT_COLOR: 250, 130, 150
+        FONT_SIZE: 37
+        FONT_COLOR: 158, 251, 222
         BACKGROUND_COLOR: 0, 0, 0
 
 
