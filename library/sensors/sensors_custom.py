@@ -118,7 +118,7 @@ class SpeedtestData(CustomDataSource):
         return self.value
 
     def as_string(self) -> str:
-       return f'{self.value:.1f}MBps'
+       return f'{int(self.value)} MBps'
 
     def last_values(self) -> List[float]:
         pass
@@ -183,7 +183,7 @@ class VPNStatusData(CustomDataSource):
         return self.value 
 
     def as_string(self) -> str:
-       return 'OK' if self.value else 'KO'
+       return ':)' if self.value else ':('
 
     def last_values(self) -> List[bool]:
         pass

@@ -20,7 +20,7 @@ STATS:
   DATE:
     DAY:
       TEXT:
-        SHOW: True
+        SHOW: False
         FORMAT: dd/MM/YY
         X: 0
         Y: 0
@@ -30,7 +30,7 @@ STATS:
         BACKGROUND_COLOR: 0, 0, 0
     HOUR:
       TEXT:
-        SHOW: True
+        SHOW: False
         FORMAT: HH:mm:ss
         X: 55
         Y: 0
@@ -44,9 +44,9 @@ STATS:
       TEXT:
         SHOW: True
         SHOW_UNIT: True
-        X: 40
-        Y: 120
-        FONT_SIZE: 28
+        X: 60
+        Y: 0
+        FONT_SIZE: 30
         FONT: roboto/Roboto-Bold.ttf
         FONT_COLOR: 100, 250, 150
         BACKGROUND_IMAGE: background.png
@@ -55,8 +55,8 @@ STATS:
     PERCENTAGE:
       RADIAL:
         X: 80
-        Y: 60
-        BAR_COLOR: 50, 200, 100
+        Y: 85
+        BAR_COLOR: 100, 250, 150
         FONT_COLOR: 100, 250, 150
         SHOW: True
         RADIUS: 55
@@ -112,8 +112,8 @@ STATS:
    VIRTUAL:
     RADIAL:
       X: 270
-      Y: 60
-      BAR_COLOR: 200, 100, 50
+      Y: 85
+      BAR_COLOR: 250, 150, 100
       FONT_COLOR: 250, 150, 100
       SHOW: True
       RADIUS: 55
@@ -133,9 +133,9 @@ STATS:
       SHOW: TRUE
       SHOW_UNIT: True
       X: 230
-      Y: 120
+      Y: 0
       FONT: roboto/Roboto-Bold.ttf
-      FONT_SIZE: 25
+      FONT_SIZE: 30
       FONT_COLOR: 250, 150, 100
       BACKGROUND_COLOR: 0, 0, 0
         
@@ -146,15 +146,15 @@ STATS:
         SHOW: True
         SHOW_UNIT: True
         X: 370
-        Y: 120
+        Y: 0
         FONT: roboto/Roboto-Bold.ttf
-        FONT_SIZE: 25
+        FONT_SIZE: 30
         FONT_COLOR: 150, 100, 250
         BACKGROUND_IMAGE: background.png
       RADIAL:
         X: 410
-        Y: 60
-        BAR_COLOR: 100, 50, 200
+        Y: 85
+        BAR_COLOR: 150, 100, 250
         FONT_COLOR: 150, 100, 250
         SHOW: True
         RADIUS: 55
@@ -183,18 +183,18 @@ STATS:
         X: 340
         Y: 170
         FONT: roboto-mono/RobotoMono-Bold.ttf
-        FONT_SIZE: 25
-        FONT_COLOR: 278, 169, 75
+        FONT_SIZE: 30
+        FONT_COLOR: 255, 169, 75
         BACKGROUND_COLOR: 0, 0, 0
 
     SpeedtestUploadData:
       TEXT:
         SHOW: True
         X: 340
-        Y: 220
+        Y: 222
         FONT: roboto-mono/RobotoMono-Bold.ttf
-        FONT_SIZE: 25
-        FONT_COLOR: 278, 169, 75
+        FONT_SIZE: 30
+        FONT_COLOR: 255, 169, 75
         BACKGROUND_COLOR: 0, 0, 0
 
     SpeedtestPingData:
@@ -203,7 +203,7 @@ STATS:
         X: 340
         Y: 280
         FONT: roboto-mono/RobotoMono-Bold.ttf
-        FONT_SIZE: 25
+        FONT_SIZE: 30
         FONT_COLOR: 150, 219, 279
         BACKGROUND_COLOR: 0, 0, 0
 
@@ -214,7 +214,7 @@ STATS:
         Y: 275
         FONT: roboto-mono/RobotoMono-Bold.ttf
         FONT_SIZE: 37
-        FONT_COLOR: 158, 251, 222
+        FONT_COLOR: 255, 255, 255
         BACKGROUND_COLOR: 0, 0, 0
 
 
