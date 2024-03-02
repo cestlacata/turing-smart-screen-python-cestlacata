@@ -101,19 +101,20 @@ class ExampleCustomTextOnlyData(CustomDataSource):
         # If a custom data class only has text values, it won't be possible to display line graph
         pass
 
-
-class SpeedtestDownloadData(CustomDataSource):
-    def as_numeric(self) -> float:
+# Abstract class for speedtest stats
+class SpeedtestData(CustomDataSource):
+    def __init__(self, metric: str) -> None:
+        self.metric = metric
         self.value = math.nan
 
+    def as_numeric(self) -> float:
         try:
             with open('/home/tom/speedtest.log') as json_file:
                 speedtest_results = json.loads(json_file.read())
                 if speedtest_results:
-                    self.value = int(speedtest_results["download"]["bandwidth"]) / 125000
+                    self.value = int(speedtest_results[self.metric]["bandwidth"]) / 125000
         except IOError as e:
-            logger.error('Error with speedtest : ' + e)
-
+            logger.error(f'Error with speedtest : {e}')
         return self.value
 
     def as_string(self) -> str:
@@ -122,25 +123,13 @@ class SpeedtestDownloadData(CustomDataSource):
     def last_values(self) -> List[float]:
         pass
 
-class SpeedtestUploadData(CustomDataSource):
-    def as_numeric(self) -> float:
-        self.value = math.nan
+class SpeedtestDownloadData(SpeedtestData):
+    def __init__(self) -> None:
+        super().__init__(metric="download")
 
-        try:
-            with open('/home/tom/speedtest.log') as json_file:
-                speedtest_results = json.loads(json_file.read())
-                if speedtest_results:
-                    self.value = int(speedtest_results["upload"]["bandwidth"]) / 125000
-        except IOError as e:
-            logger.error('Error with speedtest : ' + e)
-
-        return self.value
-
-    def as_string(self) -> str:
-       return f'{self.value:.1f}MBps'
-
-    def last_values(self) -> List[int]:
-        pass
+class SpeedtestUploadData(SpeedtestData):
+    def __init__(self) -> None:
+        super().__init__(metric="upload")
 
 class SpeedtestPingData(CustomDataSource):
     def as_numeric(self) -> float:
